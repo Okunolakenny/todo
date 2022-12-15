@@ -1,0 +1,88 @@
+$bgColor: #8fc8fd;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: $bgColor;
+    overflow-x: hidden;
+    main{
+        width: 60%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .area{
+            width: 100%; 
+            h1{
+                color: blue;
+                text-align: center;
+                font-size: 1.7rem;
+                margin-bottom: 1rem;
+                text-shadow: 1px 2px 2px #0080ff;
+            }
+            .inputArea{
+                width: 100%;
+                background: white;
+                display: flex;
+                padding: .5rem;
+                border-radius: .5rem;
+                box-shadow: 0 0 2px 3px #00000011;
+                .input{
+                    width: 100%;
+                    border: none;
+                    font-size: 1rem;
+                    color: #1900ff;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                .add{
+                    padding: .5rem;
+                    background: #006e00;
+                    border: none;
+                    border-radius: .3rem;
+                    cursor: pointer;
+                    .fa-paper-plane{
+                        color: white;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .todos{
+                display: flex;
+                flex-direction: column;
+                gap: .3rem;
+                padding: 2rem;
+                overflow-y: auto;
+                max-height: 500px;
+                .todo{
+                    display: flex;
+                    font-size: 1.2rem;
+                    flex-direction: row;
+                    position: relative;
+                    margin-bottom: .3rem;
+                    .task{
+                        width: 90%;
+                        word-wrap: break-word;
+                    }
+                    input{
+                        margin-right: 1rem;
+                    }
+                    .trash{
+                        cursor: pointer;
+                        display: none;
+                        .del{
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
