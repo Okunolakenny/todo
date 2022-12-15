@@ -13,10 +13,19 @@ function TodoArea() {
         </div>
     `)
     $("main").append(content)
+    $(".add").attr("disabled", true)
+    $(".input").on('input', function() {
+        if ($(this).val().length === 0) {
+            $(".add").attr("disabled", true)
+        }else{
+            $(".add").attr("disabled", false)
+        }
+    })
     $(".add").click(addTodo)
 }
 
 function addTodo() {
+    $(".add").attr("disabled", true)
     let text =  $(".area").find(".input").val()
     $(".area").find(".input").val("")
     let content = $(`
