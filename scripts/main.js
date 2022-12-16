@@ -25,9 +25,37 @@ function TodoArea() {
             $(".add").attr("disabled", false)
         }
     })
+    $(".select-all").on('input', function () {
+        if (($(this).prop("checked"))) {
+            selectAll()
+        }
+        else{
+            uncheckAll()
+        }
+    })
+    $(".delete-all").click(function () {
+        let allTask = ($(".todo").find("#checker"));
+        allTask.each((i,el)=>{
+            let checked = $(el).prop("checked");
+            checked && $(el).parent().remove()
+        })
+        // if (($(".todo").find("#checker").prop("checked"))) {
+        //     delAll()
+        // }
+        $(".select-all").prop({checked: false})
+    })
     $(".add").click(addTodo)
 }
-
+function selectAll() {
+    $(".todo").children("#checker").attr("checked", true)
+}
+function uncheckAll() {
+    $(".todo").children("#checker").attr("checked", false)
+}
+function delAll() {
+    $(".todo").children("#checker").attr("checked", true).parent().remove()
+    $(".select-all").attr("checked", false)
+}
 function addTodo() {
     $(".add").attr("disabled", true)
     let text =  $(".area").find(".input").val()
