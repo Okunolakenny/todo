@@ -19,6 +19,23 @@ body{
         align-items: center;
         .area{
             width: 100%; 
+            .all{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .delete-all{
+                    padding: .6rem;
+                    cursor: pointer;
+                    background: #c40000;
+                    color: white;
+                    border: none;
+                    border-radius: .3rem;
+                    &:focus{
+                        outline: none;
+                        border: none;
+                    }
+                }
+            }
             h1{
                 color: blue;
                 text-align: center;

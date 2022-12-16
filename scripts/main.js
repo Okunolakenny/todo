@@ -1,6 +1,10 @@
 function TodoArea() {
     let content = $(`
         <div class="area">
+            <div class="all">
+                <input type="checkbox" class="select-all">
+                <button class="delete-all">Delete All</button>
+            </div>
             <h1>Todo</h1>
             <div class="inputArea">
                 <input type="text" class="input">
