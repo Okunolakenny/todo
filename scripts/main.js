@@ -26,6 +26,9 @@ function TodoArea() {
         }
     })
     $(".add").click(addTodo)
+    $(".todos").each(function() {
+        
+    })
 }
 
 function addTodo() {
