@@ -39,6 +39,8 @@ function TodoArea() {
             let checked = $(el).prop("checked");
             checked && $(el).parent().remove()
         })
+        
+        
         // if (($(".todo").find("#checker").prop("checked"))) {
         //     delAll()
         // }
@@ -82,6 +84,13 @@ function addTodo() {
             else{
                 trash.hide()
             }
+        })
+        let allTask = ($(".todo").find("#checker"));
+        console.log(allTask);
+        allTask.each((i, el) => {
+            el.on('input', function () {
+                console.log(el + "Checked");
+            })
         })
 }
 TodoArea()
